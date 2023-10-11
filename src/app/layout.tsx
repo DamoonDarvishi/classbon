@@ -1,6 +1,8 @@
 import './globals.css';
 import { Figtree } from 'next/font/google';
 import localFont from 'next/font/local';
+import { Header } from './_components/header/header';
+import { Footer } from './_components/footer/footer';
 
 const figtree = Figtree({
   display: "swap",
@@ -26,11 +28,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html className={`${figtree.variable} ${yekan.variable}`} dir='rtl'>
-      <body className='flex flex-col min-h-screen font-bold uppercase'>
-      <header className='bg-gray-200 flex items-center justify-center h-20'>دوره معماری ری اکت</header>
-      <div className='flex flex-1 justify-center items-center text-3xl'>{children}</div>
-        <footer className='bg-gray-200 flex items-center justify-center h-20'>Footer</footer>
+    <html className={`dark ${figtree.variable} ${yekan.variable}`} dir='rtl'>
+      <body className='min-h-screen grid grid-rows-[80px_1fr_auto] font-bold uppercase dark:bg-base-100 dark:text-base-content'>
+        <Header />
+        <div className='flex flex-1 justify-center items-center'>{children}</div>
+        <Footer />
       </body>
     </html>
   )
