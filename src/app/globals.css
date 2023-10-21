@@ -1,6 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base'; /* @tailwind base; */
+@import 'tailwindcss/components'; /* @tailwind components; */
+@import 'tailwindcss/utilities'; /* @tailwind utilities; */
+/* We have to change another way to import tailwind like above that
+ below import worked because @import must be top of the files */
+@import "../tailwind/components/components.css";
 
 html {
     font-family: var(--font-yekan);
