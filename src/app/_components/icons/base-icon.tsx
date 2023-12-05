@@ -21,7 +21,7 @@ const BaseIcon:FC<SvgIcon> = ({
             strokeLinecap="round"
             strokeLinejoin="round"
             {...rest}
-            stroke={`${color}`}
+            stroke={color}
         >
             {children}
         </svg>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Button } from "../button";
+import { IconArrowLeftFill } from "../icons/icons";
 
 export const HomeHeroSection: React.FC = () => {
   return (
@@ -13,8 +14,11 @@ export const HomeHeroSection: React.FC = () => {
            با همراهی استادهای باتجربه کلاسبن میتونی بدون محدودیت به
            قله های بالاتر صعود کنی. ما همیشه هواتو داریم.
         </p>
-        <div className="mt-5 flex gap-4">
-        <Button variant="primary" size="large">دوره های ری اکت و نکست</Button>
+        <div className="justify-center xl:justify-start mt-5 flex gap-4">
+        <Button variant="primary" size="large">
+          دوره های ری اکت و نکست
+          <IconArrowLeftFill fill="currentColor" />
+        </Button>
         <Button variant="neutral" size="large">مشاوره برنامه نویسی</Button>
         </div>
         <Image src="/images/frameworks.png" className="grayscale mt-4 opacity-70 m-auto xl:m-0" width={412} height={39} alt="online class" />
