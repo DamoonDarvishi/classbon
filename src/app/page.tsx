@@ -6,10 +6,12 @@ import Feature from "./_components/feature/feature";
 import { Button } from "./_components/button";
 import { IconArrowLeftFill } from "./_components/icons/icons";
 import { BlogPostSummary } from "@/types/blog-post-summary.interface";
+import { BlogPostCardList } from "./(blog)/_components/blog-post-card-list";
+import { API_URL } from "@/configs/global";
 
 async function getNewestCourses(count: number): Promise<CourseSummary[]> {
   const res = await fetch(
-    `https://api.classbon.com/api/courses/newest/${count}`,
+    `${API_URL}/courses/newest/${count}`,
     {
       next: {
         revalidate: 24 * 60 * 60,
@@ -20,14 +22,11 @@ async function getNewestCourses(count: number): Promise<CourseSummary[]> {
 }
 
 async function getNewestPosts(count: number): Promise<BlogPostSummary[]> {
-  const res = await fetch(
-    `https://api.classbon.com/api/blog/newest/${count}`,
-    {
-      next: {
-        revalidate: 24 * 60 * 60,
-      },
-    }
-  );
+  const res = await fetch(`https://api.classbon.com/api/blog/newest/${count}`, {
+    next: {
+      revalidate: 24 * 60 * 60,
+    },
+  });
   return res.json();
 }
 
@@ -35,7 +34,10 @@ export default async function Home() {
   const newestCoursesData = getNewestCourses(4);
   const newestBlogPostsData = getNewestPosts(4);
 
-const [newestCourses, newestBlogPosts] = await Promise.all([newestCoursesData, newestBlogPostsData])
+  const [newestCourses, newestBlogPosts] = await Promise.all([
+    newestCoursesData,
+    newestBlogPostsData,
+  ]);
   return (
     <>
       <HomeHeroSection />
@@ -91,6 +93,28 @@ const [newestCourses, newestBlogPosts] = await Promise.all([newestCoursesData, n
             </Button>
           </div>
         </div>
+      </section>
+      <section className="container py-20">
+        <div className="flex flex-col xl:flex-row gap-4 justify-center xl:justify-between items-center">
+          <div className="text-center xl:text-right">
+            <h2 className="text-2xl font-extrabold">
+              تازه‌ترین مقاله‌های آموزشی
+            </h2>
+            <p className="mt-3 text-lg">
+              به رایگان، به‌روزترین مقاله‌های دنیای تکنولوژی رو در اختیارت
+              می‌ذاریم؛ چون پیشرفتت برامون مهمه!
+            </p>
+          </div>
+          <Button
+            variant="neutral"
+            className="font-semibold"
+            animatedIcon={true}
+          >
+            همه مقاله‌ها
+            <IconArrowLeftFill fill="currentColor" />
+          </Button>
+        </div>
+        <BlogPostCardList posts={newestBlogPosts} />
       </section>
     </>
   );
