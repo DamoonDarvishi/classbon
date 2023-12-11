@@ -1,4 +1,3 @@
-import { CourseSummary } from "@/types/course-summary.interface";
 import { HomeHeroSection } from "./_components/home-hero-section/home-hero-section";
 import { CourseCardList } from "./(courses)/_components/course-card-list";
 import { homeFeatures } from "@/data/home-features";
@@ -8,21 +7,13 @@ import { IconArrowLeftFill } from "./_components/icons/icons";
 import { BlogPostSummary } from "@/types/blog-post-summary.interface";
 import { BlogPostCardList } from "./(blog)/_components/blog-post-card-list";
 import { API_URL } from "@/configs/global";
-
-async function getNewestCourses(count: number): Promise<CourseSummary[]> {
-  const res = await fetch(
-    `${API_URL}/courses/newest/${count}`,
-    {
-      next: {
-        revalidate: 24 * 60 * 60,
-      },
-    }
-  );
-  return res.json();
-}
+import { Suspense } from "react";
+import { CardPlaceholder } from "./_components/placehorders/card/card-placeholder";
+import { TestimonialList } from "./_components/testimonial/testimonial-list";
+import { testimonials } from "@/data/testimonials";
 
 async function getNewestPosts(count: number): Promise<BlogPostSummary[]> {
-  const res = await fetch(`https://api.classbon.com/api/blog/newest/${count}`, {
+  const res = await fetch(`${API_URL}/blog/newest/${count}`, {
     next: {
       revalidate: 24 * 60 * 60,
     },
@@ -31,13 +22,9 @@ async function getNewestPosts(count: number): Promise<BlogPostSummary[]> {
 }
 
 export default async function Home() {
-  const newestCoursesData = getNewestCourses(4);
   const newestBlogPostsData = getNewestPosts(4);
 
-  const [newestCourses, newestBlogPosts] = await Promise.all([
-    newestCoursesData,
-    newestBlogPostsData,
-  ]);
+  const [newestBlogPosts] = await Promise.all([newestBlogPostsData]);
   return (
     <>
       <HomeHeroSection />
@@ -54,7 +41,9 @@ export default async function Home() {
           <h1 className="text-2xl text-extrabold">تازه ترین دوره های آموزشی</h1>
           <p>برای بروز موندن تازه ترین نکته های آموزشی ضروریه!</p>
         </div>
-        <CourseCardList courses={newestCourses} />
+        <Suspense fallback={<CardPlaceholder count={4} className="mt-5" />}>
+          <CourseCardList courses={[]} />
+        </Suspense>
       </section>
       <section className="px-2 my-40">
         {/* <div className="sticky top-0 pt-0 text-center"> */}
@@ -116,6 +105,18 @@ export default async function Home() {
         </div>
         <BlogPostCardList posts={newestBlogPosts} />
       </section>
+      <div className="relative mt-32">
+        <div className="bg-primary pointer-events-none absolute bottom-0 left-1/2 aspect-square w-1/2 -translate-x-1/2 rounded-full opacity-5 -top-52 blur-3xl"></div>
+        <h2 className="text-info relative z-0 mx-auto text-3xl font-extrabold block w-fit">
+          <span className="-z-10 w-8 h-8 absolute bg-info opacity-25 -top-2 rounded-full inline-block -right-3"></span>
+          تجربه هم‌میسرهای کلاسبن
+        </h2>
+        <p className=" mb-32 text-lg text-center mt-2">
+          تو اینجا تنها نیستی. ببین هم‌مسیرهات نظرشون در مورد دوره‌های کلاسبن
+          چیه
+        </p>
+        <TestimonialList testimonials={testimonials} />
+      </div>
     </>
   );
 }
