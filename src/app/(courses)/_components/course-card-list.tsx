@@ -1,4 +1,4 @@
-"use client"
+// "use client"
 import { CourseSummary } from "@/types/course-summary.interface";
 import { CourseCard } from "./course-card";
 import { API_URL } from "@/configs/global";
@@ -25,6 +25,7 @@ export const CourseCardList: React.FC<CourseCardListProps> = async ({
     courses
 }: CourseCardListProps) => {
   const newestCoursesData = await getNewestCourses(4);
+  console.log(newestCoursesData)
     return (
         <div className="flex flex-wrap justify-center xl:justify-start gap-6 mt-10">
             {newestCoursesData.map((course) => {
