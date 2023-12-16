@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { TestimonialProps } from "./testimonial.types";
 
+
 const TestimonialItem: React.FC<TestimonialProps> = ({
   testimonial: { image, name, skills, description },
 }) => {
