@@ -1,8 +1,10 @@
 import { API_URL } from "@/configs/global";
+import { Accordion as AccordionType } from "@/types/accordion";
 import { CourseDetails } from "@/types/course-details.interface";
 import { CourseAside } from "./_components/course-aside/course-aside";
 import { Tabs } from "@/app/_components/tabs";
 import { Tab } from "@/types/tab.type";
+import { Accordion as AccordionType } from "@/types/accordion";
 // we use this method for rendered component to static
 export async function generateStaticParams() {
     const slugs = await fetch(`${API_URL}/courses/slugs`).then((res) =>
@@ -15,13 +17,18 @@ export async function generateStaticParams() {
 }
 
 async function getCourse(slug: string): Promise<CourseDetails> {
-    const res = await fetch(`${API_URL}/courses/${slug}`);
-    return res.json();
+  const res = await fetch(`${API_URL}/courses/${slug}`);
+  return res.json();
 }
 
 export default async function CourseDetails({params}: {params: {slug: string}}) {
     const { slug } = params;
     const course = await getCourse(slug);
+     const faqs: AccordionType[] = course.frequentlyAskedQuestions.map((faq) => ({
+      id: faq.id,
+      title: faq.question,
+      content: faq.answer,
+    }));
     const tabs: Tab[] = [
         {
             label: "مشخصات دوره",
