@@ -1,14 +1,14 @@
-import './globals.css';
-import { Figtree } from 'next/font/google';
-import localFont from 'next/font/local';
-import { Footer } from './_components/footer';
-import { Header } from './_components/header';
+import "./globals.css";
+import { Figtree } from "next/font/google";
+import localFont from "next/font/local";
+import { Footer } from "./_components/footer";
+import { Header } from "./_components/header";
 
 const figtree = Figtree({
   display: "swap",
   subsets: ["latin"],
-  weight: ['300', '400', '500', '600', '700', '800', '900'],
-  variable: "--font-figtree"
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-figtree",
 });
 
 const yekan = localFont({
@@ -16,24 +16,24 @@ const yekan = localFont({
     {
       path: "../../public/fonts/yekan/yekan-regular.woff",
       weight: "300",
-      style: "normal"
-    }
+      style: "normal",
+    },
   ],
-  variable: "--font-yekan"
-})
+  variable: "--font-yekan",
+});
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html className={`dark ${figtree.variable} ${yekan.variable}`} dir='rtl'>
-      <body className='min-h-screen grid grid-rows-[80px_1fr_auto] font-bold uppercase dark:bg-base-100 dark:text-base-content'>
+    <html className={`dark ${figtree.variable} ${yekan.variable}`} dir="rtl">
+      <body className="min-h-screen grid grid-rows-[80px_1fr_auto] font-bold uppercase dark:bg-base-100 dark:text-base-content">
         <Header />
         <main>{children}</main>
         <Footer />
       </body>
     </html>
-  )
+  );
 }
