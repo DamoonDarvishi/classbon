@@ -7,7 +7,7 @@
 
 # testing
 /coverage
-.jest-test-results.json
+# .jest-test-results.json
 
 # next.js
 /.next/
