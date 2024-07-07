@@ -20,11 +20,11 @@
   }
 
   html {
-    font-family: var(--font-yekanbakh);
+    font-family: var(--font-source);
   }
 
   :lang(en) {
-    font-family: var(--font-figtree);
+    font-family: var(--font-source);
   }
 }
 
