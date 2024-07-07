@@ -16,4 +16,5 @@ type Courses = {
   discountedPrice: null;
   discountRemainingTime: null;
   discountType: null;
+  img: string;
 };

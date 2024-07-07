@@ -15,4 +15,5 @@ export interface CourseSummary {
   subTitle: string;
   isFree: boolean;
   basePrice: number;
+  img: string;
 }
