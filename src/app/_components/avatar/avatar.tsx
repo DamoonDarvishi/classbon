@@ -1,7 +1,7 @@
 import React, { HTMLAttributes, ReactNode, forwardRef } from "react";
 import Image from "next/image";
 import { Size } from "../types/size.type";
-import { AvatarProps } from "./avatar.types";
+import type { AvatarProps } from "./avatar.types";
 import { IconUserProfile } from "@/app/_components/icons/icons";
 import clsx from "clsx";
 

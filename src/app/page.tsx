@@ -3,7 +3,7 @@ import { CourseCardList } from "./(courses)/_components/course-card-list";
 import { homeFeatures } from "@/data/home-features";
 import Feature from "./_components/feature/feature";
 import { Button } from "./_components/button";
-import { IconArrowLeftFill } from "./_components/icons/icons";
+import { IconArrowRight } from "./_components/icons/icons";
 import { BlogPostSummary } from "@/types/blog-post-summary.interface";
 import { BlogPostCardList } from "./(blog)/_components/blog-post-card-list";
 import { API_URL } from "@/configs/global";
@@ -37,9 +37,13 @@ export default async function Home() {
       </section>
 
       <section className="container pt-20">
-        <div className="text-center xl:text-right">
-          <h1 className="text-2xl text-extrabold">تازه ترین دوره های آموزشی</h1>
-          <p>برای بروز موندن تازه ترین نکته های آموزشی ضروریه!</p>
+        <div className="text-center xl:text-left">
+          <h1 className="text-2xl font-extrabold">
+            Newest Educational Courses
+          </h1>
+          <p>
+            Staying up-to-date with the latest educational tips is essential!
+          </p>
         </div>
         <Suspense fallback={<CardPlaceholder count={4} className="mt-5" />}>
           <CourseCardList courses={[]} />
@@ -57,10 +61,10 @@ export default async function Home() {
             ReactJs & Next.js
           </h2>
           <p className="text-base-content/70  relative z-[2] py-4 m-auto md:text-3xl max-w-5xl font-light !leading-[1.7]">
-            ری‌اکت و نکست‌جی‌اس برترین کتابخونه‌های فرانت‌اند و یکه‌تاز دنیای
-            وب! پیشرفته‌ترین مباحث رو اینجا می تونی پیدا کنی. پس همین الان
-            یادگیری رو شروع کن ما هم از ابتدای مسیر با آموزش‌های تخصصی و کاملاً
-            کاربردی کنارت هستیم.
+            React and Next.js are the top front-end libraries and the leaders of
+            the web world! Here, you can find the most advanced topics. So,
+            start learning right now. We are with you from the beginning of the
+            journey with specialized and fully practical training.
           </p>
           <div className="flex flex-col lg:flex-row items-center gap-3 justify-center">
             <Button
@@ -69,8 +73,8 @@ export default async function Home() {
               className="mt-7"
               animatedIcon={true}
             >
-              دوره‌های ری اکت و نکست‌ جی‌اس
-              <IconArrowLeftFill fill="currentColor" />
+              React and Next.js Courses
+              <IconArrowRight fill="currentColor" />
             </Button>
             <Button
               variant="neutral"
@@ -78,7 +82,7 @@ export default async function Home() {
               className="mt-7"
               animatedIcon={true}
             >
-              مقالات ری اکت و نکست‌ جی‌اس
+              Programming Consultation
             </Button>
           </div>
         </div>
@@ -87,11 +91,11 @@ export default async function Home() {
         <div className="flex flex-col xl:flex-row gap-4 justify-center xl:justify-between items-center">
           <div className="text-center xl:text-right">
             <h2 className="text-2xl font-extrabold">
-              تازه‌ترین مقاله‌های آموزشی
+              Latest Educational Articles
             </h2>
             <p className="mt-3 text-lg">
-              به رایگان، به‌روزترین مقاله‌های دنیای تکنولوژی رو در اختیارت
-              می‌ذاریم؛ چون پیشرفتت برامون مهمه!
+              We provide you with the latest articles in the tech world for free
+              because your progress matters to us!
             </p>
           </div>
           <Button
@@ -99,8 +103,7 @@ export default async function Home() {
             className="font-semibold"
             animatedIcon={true}
           >
-            همه مقاله‌ها
-            <IconArrowLeftFill fill="currentColor" />
+            All Articles <IconArrowRight fill="currentColor" />
           </Button>
         </div>
         <BlogPostCardList posts={newestBlogPosts} />
@@ -109,11 +112,11 @@ export default async function Home() {
         <div className="bg-primary pointer-events-none absolute bottom-0 left-1/2 aspect-square w-1/2 -translate-x-1/2 rounded-full opacity-5 -top-52 blur-3xl"></div>
         <h2 className="text-info relative z-0 mx-auto text-3xl font-extrabold block w-fit">
           <span className="-z-10 w-8 h-8 absolute bg-info opacity-25 -top-2 rounded-full inline-block -right-3"></span>
-          تجربه هم‌میسرهای کلاسبن
+          Experiences of Classbon Companions
         </h2>
-        <p className=" mb-32 text-lg text-center mt-2">
-          تو اینجا تنها نیستی. ببین هم‌مسیرهات نظرشون در مورد دوره‌های کلاسبن
-          چیه
+        <p className="mb-32 text-lg text-center mt-2">
+          You are not alone here. See what your companions think about Classbon
+          courses.
         </p>
         <TestimonialList testimonials={testimonials} />
       </div>

@@ -1,5 +1,5 @@
 import { Badge } from "@/app/_components/badge";
-import { IconArrowLeftFill, IconClock } from "@/app/_components/icons/icons";
+import { IconArrowRight, IconClock } from "@/app/_components/icons/icons";
 import { Price } from "@/app/_components/price/price";
 import { CourseSummary } from "@/types/course-summary.interface";
 import Image from "next/image";
@@ -47,7 +47,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({
         className="card-footer justify-center animated-icon"
       >
         مشاهده جزيیات دوره
-        <IconArrowLeftFill fill="currentColor" />
+        <IconArrowRight fill="currentColor" />
       </Link>
     </div>
   );

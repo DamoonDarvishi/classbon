@@ -28,7 +28,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html className={`dark ${figtree.variable} ${yekan.variable}`} dir="rtl">
+    <html
+      lang="en"
+      className={`dark ${figtree.variable} ${yekan.variable}`}
+      dir="ltr"
+    >
       <body className="min-h-screen grid grid-rows-[80px_1fr_auto] font-bold uppercase dark:bg-base-100 dark:text-base-content">
         <Header />
         <main>{children}</main>

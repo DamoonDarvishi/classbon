@@ -1,7 +1,7 @@
-import { CourseAsideProps } from "./course-aside.types";
+import type { CourseAsideProps } from "./course-aside.types";
 import { Rating } from "@/app/_components/rating";
 import {
-  IconArrowLeftFill,
+  IconArrowRight,
   IconClock,
   IconComment,
   IconDoc,
@@ -125,7 +125,7 @@ export const CourseAside: React.FC<CourseAsideProps> = ({
         animatedIcon={true}
       >
         مشاهده پروفایل
-        <IconArrowLeftFill fill="currentColor" />
+        <IconArrowRight fill="currentColor" />
       </Button>
     </aside>
   );
