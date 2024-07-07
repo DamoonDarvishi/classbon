@@ -8,12 +8,14 @@ export const CardPlaceholder: React.FC<CardPlaceholderProps> = ({
 }) => {
   const counts = Array.from({ length: count }, (_, index) => index + 1);
   return (
-    <div className={`flex flex-wrap justify-center xl:justify-start gap-6 mt-10 ${className}`}>
+    <div
+      className={`flex flex-wrap justify-center xl:justify-start gap-6 mt-10 ${className}`}
+    >
       {counts.map((item) => (
         <div
           key={`cardplaceholder${item}`}
           role="status"
-          className="w-80 flex-1  rounded animate-pulse"
+          className="w-80 flex-1 rounded animate-pulse"
         >
           <div className="flex items-center justify-center h-48 mb-4 bg-base-25 rounded">
             <svg

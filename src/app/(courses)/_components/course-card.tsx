@@ -46,7 +46,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({
         href={`/courses/${slug}`}
         className="card-footer justify-center animated-icon"
       >
-        مشاهده جزيیات دوره
+        View Courses
         <IconArrowRight fill="currentColor" />
       </Link>
     </div>

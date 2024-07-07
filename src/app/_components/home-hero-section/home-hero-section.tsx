@@ -17,10 +17,10 @@ export const HomeHeroSection: React.FC = () => {
             peaks without limitations. We always have your back.
           </p>
           <div className="justify-center xl:justify-start mt-5 flex gap-4">
-            <Button variant="primary" size="large">
-              React and Next.js Courses <IconArrowRight fill="currentColor" />
+            <Button variant="primary" size="normal">
+              Frontend Courses <IconArrowRight fill="currentColor" />
             </Button>
-            <Button variant="neutral" size="large">
+            <Button variant="neutral" size="normal">
               Programming Consultation{" "}
             </Button>
           </div>

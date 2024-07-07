@@ -69,16 +69,16 @@ export default async function Home() {
           <div className="flex flex-col lg:flex-row items-center gap-3 justify-center">
             <Button
               variant="primary"
-              size="large"
+              size="normal"
               className="mt-7"
               animatedIcon={true}
             >
-              React and Next.js Courses
+              Frontend Courses
               <IconArrowRight fill="currentColor" />
             </Button>
             <Button
               variant="neutral"
-              size="large"
+              size="normal"
               className="mt-7"
               animatedIcon={true}
             >
