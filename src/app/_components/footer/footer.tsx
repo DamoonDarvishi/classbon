@@ -5,59 +5,58 @@ import { Avatar } from "../avatar";
 export const Footer = () => {
   return (
     <div className="bg-base-100 text-base-content">
-      <footer className="container flex flex-col  lg:flex-row items-center gap-5 px-0  lg:px-12 xl:px-40 py-20">
+      <footer className="container flex flex-col  lg:flex-row items-center gap-3 px-0 lg:px-3 xl:px-6 py-20">
         <div className="text-center flex flex-col items-center lg:me-20">
           <Image
             src="/images/logo-en-light.svg"
             width={180}
             height={36}
-            alt="کلاسبن"
+            alt="classbon logo"
           />
-
           <p className="opacity-50 mt-2">
-            پلتفرم آموزش برنامه‌نویسی
-            <br /> یادگیری مداوم - پیشرفت مستمر
+            Programming Education Platform
+            <br /> Continuous Learning - Continuous Improvement
           </p>
         </div>
         <div className="flex flex-1 flex-col md:flex-row gap-5 md:gap-6 whitespace-nowrap">
           <div className="grid flex-1 basis-36 gap-3 place-items-center md:place-items-start">
             <Link href="/docs/install/" className="link link-hover">
-              آموزش ری‌اکت و نکست
+              React and Next.js Tutorial
             </Link>
             <Link href="/docs/customize/" className="link link-hover">
-              سنیور ری‌اکت
+              Senior React
             </Link>
             <Link href="/docs/customize/" className="link link-hover">
-              مشاوره برنامه‌نویسی
+              Programming Consultation
             </Link>
           </div>
 
           <div className="grid flex-1 basis-36 gap-3 place-items-center md:place-items-start">
             <Link href="/docs/themes/" className="link link-hover">
-              کلاسبن در لینکدین
+              Classbon on LinkedIn
             </Link>
             <Link href="/docs/themes/" className="link link-hover">
-              کلاسبن در تلگرام
+              Classbon on Telegram
             </Link>
             <Link href="/docs/themes/" className="link link-hover">
-              کلاسبن در یوتیوب
+              Classbon on YouTube
             </Link>
           </div>
           <div className="grid flex-1 basis-36 gap-3 place-items-center md:place-items-start">
             <Link href="/docs/themes/" className="link link-hover">
-              مطالب و مقالات
+              Articles and Posts
             </Link>
             <Link href="/docs/themes/" className="link link-hover">
-              پرسش های متداول
+              Frequently Asked Questions
             </Link>
             <Link href="/docs/themes/" className="link link-hover">
-              شرایط استفاده و حریم خصوصی
+              Terms of Use and Privacy Policy
             </Link>
           </div>
         </div>
       </footer>
 
-      <div className="bg-base-200 text-left" lang="en" dir="ltr">
+      <div className="bg-base-200 text-left">
         <div className="container py-10 flex justify-between items-center">
           <div className="flex gap-5 items-center ">
             <Avatar src="/images/damoon.jpeg" />

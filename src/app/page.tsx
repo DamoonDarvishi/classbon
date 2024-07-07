@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { HomeHeroSection } from "./_components/home-hero-section/home-hero-section";
 import { CourseCardList } from "./(courses)/_components/course-card-list";
 import { homeFeatures } from "@/data/home-features";
@@ -7,7 +8,6 @@ import { IconArrowRight } from "./_components/icons/icons";
 import { BlogPostSummary } from "@/types/blog-post-summary.interface";
 import { BlogPostCardList } from "./(blog)/_components/blog-post-card-list";
 import { API_URL } from "@/configs/global";
-import { Suspense } from "react";
 import { CardPlaceholder } from "./_components/placehorders/card/card-placeholder";
 import { TestimonialList } from "./_components/testimonial/testimonial-list";
 import { testimonials } from "@/data/testimonials";
