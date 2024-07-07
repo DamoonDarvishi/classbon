@@ -8,7 +8,6 @@ import Link from "next/link";
 export type CourseCardProps = CourseSummary & {};
 
 export const CourseCard: React.FC<CourseCardProps> = ({
-  coverImageId,
   level,
   title,
   subTitle,
@@ -16,16 +15,12 @@ export const CourseCard: React.FC<CourseCardProps> = ({
   basePrice,
   duration,
   slug,
+  img,
 }: CourseCardProps) => {
   return (
     <div className="card">
       <figure>
-        <Image
-          src={`https://api.classbon.com/api/picture/${coverImageId}`}
-          alt={title}
-          width={550}
-          height={327}
-        />
+        <Image src={img} alt={title} width={400} height={327} />
       </figure>
       <div className="mt-2 flex gap-2 font-semibold dark:text-info px-3 py-2">
         <Badge variant="info">{recordStatus}</Badge>

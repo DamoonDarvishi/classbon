@@ -19,6 +19,7 @@ export const courses: Courses[] = [
     discountedPrice: null,
     discountRemainingTime: null,
     discountType: null,
+    img: "/images/courses/html-css-javascript.jpeg",
   },
   {
     id: 84,
@@ -39,6 +40,7 @@ export const courses: Courses[] = [
     discountedPrice: null,
     discountRemainingTime: null,
     discountType: null,
+    img: "/images/courses/nextjs.jpg",
   },
   {
     id: 97,
@@ -59,6 +61,7 @@ export const courses: Courses[] = [
     discountedPrice: null,
     discountRemainingTime: null,
     discountType: null,
+    img: "/images/courses/react-typescript.jpeg",
   },
   {
     id: 105,
@@ -79,5 +82,6 @@ export const courses: Courses[] = [
     discountedPrice: null,
     discountRemainingTime: null,
     discountType: null,
+    img: "/images/courses/react-redux.png",
   },
 ];

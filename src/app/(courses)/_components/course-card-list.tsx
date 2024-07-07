@@ -19,7 +19,7 @@ export const CourseCardList: React.FC = () => {
   // const newestCoursesData = await getNewestCourses(4);
   const newestCoursesData = courses;
   return (
-    <div className="flex flex-wrap justify-center xl:justify-start gap-6 mt-10">
+    <div className="flex flex-wrap justify-between gap-8 mt-10">
       {newestCoursesData.map((course) => {
         return <CourseCard key={`course-${course.slug}`} {...course} />;
       })}

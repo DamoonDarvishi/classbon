@@ -89,7 +89,7 @@ export default async function Home() {
       </section>
       <section className="container py-20">
         <div className="flex flex-col xl:flex-row gap-4 justify-center xl:justify-between items-center">
-          <div className="text-center xl:text-right">
+          <div className="text-center xl:text-left">
             <h2 className="text-2xl font-extrabold">
               Latest Educational Articles
             </h2>
